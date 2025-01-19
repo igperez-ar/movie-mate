@@ -1,0 +1,134 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "react-native", "react-hooks", "@typescript-eslint"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "ecmaVersion": 6,
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "extends": ["@react-native", "eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "rules": {
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-use-before-define": "error",
+    "arrow-body-style": "warn",
+    "class-methods-use-this": "off",
+    "default-param-last": 0,
+    "implicit-arrow-linebreak": "off",
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": "off",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": 0,
+    "no-plusplus": 0,
+    "no-prototype-builtins": "off",
+    "no-restricted-exports": [
+      "error",
+      {
+        "restrictDefaultExports": {
+          "direct": true
+        }
+      }
+    ],
+    "no-shadow": "off",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["_root"]
+      }
+    ],
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "consistent": true, "multiline": true },
+        "ObjectPattern": { "consistent": true, "multiline": true },
+        "ImportDeclaration": { "consistent": true, "multiline": true },
+        "ExportDeclaration": { "minProperties": 3, "multiline": true }
+      }
+    ],
+    "operator-linebreak": ["error", "before"],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-native/no-color-literals": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-single-element-style-arrays": 2,
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-curly-newline": [
+      "error",
+      {
+        "multiline": "consistent",
+        "singleline": "consistent"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "custom": "ignore"
+      }
+    ],
+    "react/no-multi-comp": [
+      "error",
+      {
+        "ignoreStateless": true
+      }
+    ],
+    "react/prop-types": "off",
+    "react/require-default-props": "off"
+  },
+  "globals": {
+    "fetch": false,
+    "jest": false,
+    "test": false,
+    "expect": false,
+    "describe": false,
+    "beforeEach": false,
+    "window": false,
+    "__DEV__": false
+  },
+  "env": {
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js"],
+        "paths": ["src"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
+}
