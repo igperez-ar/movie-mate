@@ -16,6 +16,9 @@
       "react": [
         "./node_modules/@types/react"
       ],
+      "@core/*": ["src/core/*"],
+      "@screens/*": ["src/presentation/screens/*"],
+      "@components/*": ["src/presentation/components/*"],
     },
     "typeRoots": [
       "declarations.d.ts",
