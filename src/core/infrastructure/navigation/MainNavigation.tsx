@@ -1,15 +1,17 @@
-import React from 'react';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MovieNavigator } from '@screens/movie/navigation/MovieNavigator';
+import React from 'react';
+import { HomeScreen, SplashScreen, WelcomeScreen } from 'src/presentation/screens';
+import { GlobalRoutesEnum, MovieRoutesEnum } from 'src/shared/enums/routes';
 import {
   navigationRef,
   onReadyNavigationContainer,
   onStateChangeNavigationContainer,
+  type RootParamList,
 } from './root-navigation';
-import { GlobalRoutesEnum } from 'src/shared/enums/routes';
-import { SplashScreen, WelcomeScreen } from 'src/presentation/screens';
 
-const Stack = createNativeStackNavigator<ReactNavigation.MainNavigator>();
+const Stack = createNativeStackNavigator<RootParamList>();
 
 const defaultConfig = {
   headerShown: false,
@@ -22,7 +24,7 @@ const defaultTheme = {
   },
 };
 
-export const MainNavigation: React.FC = () => {
+export const MainNavigation = () => {
   return (
     <NavigationContainer
       ref={navigationRef}
@@ -33,6 +35,8 @@ export const MainNavigation: React.FC = () => {
       <Stack.Navigator screenOptions={defaultConfig} initialRouteName={GlobalRoutesEnum.SPLASH}>
         <Stack.Screen name={GlobalRoutesEnum.SPLASH} component={SplashScreen} />
         <Stack.Screen name={GlobalRoutesEnum.WELCOME} component={WelcomeScreen} />
+        <Stack.Screen name={GlobalRoutesEnum.HOME} component={HomeScreen} />
+        <Stack.Screen name={MovieRoutesEnum.STACK} component={MovieNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

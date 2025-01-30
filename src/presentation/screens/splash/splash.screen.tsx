@@ -1,4 +1,4 @@
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import type { ScreenProps } from '@core/infrastructure/navigation/navigation.types';
 import { LogoTMDB } from 'assets/images';
 import React from 'react';
 import { Animated, Image, StyleSheet, Text, View } from 'react-native';
@@ -6,9 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 import { useSplashPresenter } from './splash.presenter';
 
-export const SplashScreen: React.FC<
-  NativeStackScreenProps<ReactNavigation.MainNavigator, GlobalRoutesEnum.SPLASH>
-> = (props) => {
+export const SplashScreen: React.FC<ScreenProps<GlobalRoutesEnum.SPLASH>> = (props) => {
   const { opacity } = useSplashPresenter(props);
 
   return (

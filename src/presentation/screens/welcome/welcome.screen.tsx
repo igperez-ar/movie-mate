@@ -1,22 +1,20 @@
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import type { ScreenProps } from '@core/infrastructure/navigation/navigation.types';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 import { useWelcomePresenter } from './welcome.presenter';
 
-export const WelcomeScreen: React.FC<
-  NativeStackScreenProps<ReactNavigation.MainNavigator, GlobalRoutesEnum.WELCOME>
-> = (props) => {
+export const WelcomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.WELCOME>> = (props) => {
   const { handleButtonPress } = useWelcomePresenter(props);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>¡Bienvenido a MovieMate!</Text>
+      <Text style={styles.title}>Welcome to MovieMate!</Text>
       <Text style={styles.description}>
-        Explora el mundo del cine con recomendaciones personalizadas, listas y más.
+        Explore the world of cinema with personalized recommendations, lists and more
       </Text>
       <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
-        <Text style={styles.buttonText}>Comenzar</Text>
+        <Text style={styles.buttonText}>Start</Text>
       </TouchableOpacity>
     </View>
   );

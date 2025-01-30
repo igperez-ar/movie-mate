@@ -1,11 +1,9 @@
-import { useAppDispatch } from 'src/core/infrastructure/index';
+import type { ScreenProps } from '@core/infrastructure/navigation/navigation.types';
 import { setFlagValue } from '@core/infrastructure/storage/modules/config';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useAppDispatch } from 'src/core/infrastructure/index';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 
-export const useWelcomePresenter = ({
-  navigation,
-}: NativeStackScreenProps<ReactNavigation.MainNavigator, GlobalRoutesEnum.WELCOME>) => {
+export const useWelcomePresenter = ({ navigation }: ScreenProps<GlobalRoutesEnum.WELCOME>) => {
   const dispatch = useAppDispatch();
 
   const handleButtonPress = () => {

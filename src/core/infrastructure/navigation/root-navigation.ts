@@ -1,38 +1,57 @@
-import { RefObject, createRef } from 'react';
-import type {
-  NavigationContainerRef,
-  PartialState,
+import {
+  createNavigationContainerRef,
   NavigationState,
+  PartialState,
+  Route,
 } from '@react-navigation/native';
+import { createRef } from 'react';
 
-export const navigationRef: RefObject<NavigationContainerRef<any> | null> =
-  createRef<NavigationContainerRef<any>>();
+export type NavigationStateType = NavigationState | PartialState<NavigationState>;
+export type RootParamList = ReactNavigation.RootParamList;
 
-export const routeRef: RefObject<any | null> = createRef<any>();
+export const navigationRef = createNavigationContainerRef<ReactNavigation.RootParamList>();
 
-export function navigate(name: string, params?: any) {
-  navigationRef.current?.navigate(name, params);
-}
+export const routeRef = createRef<Route<string> | null>();
 
-export function reset(params: NavigationState | PartialState<NavigationState>) {
-  navigationRef.current?.reset(params);
-}
-
-export function goBack() {
-  if (navigationRef.current?.canGoBack()) {
-    navigationRef.current.goBack();
+export function navigate<RouteName extends keyof RootParamList>(
+  name: RouteName,
+  params?: RootParamList[RouteName],
+): void {
+  if (navigationRef.isReady()) {
+    navigationRef.navigate(name as string, params);
   }
 }
 
-export const onReadyNavigationContainer = () => {
-  routeRef.current = navigationRef.current?.getCurrentRoute();
+export function reset(state: NavigationStateType): void {
+  if (navigationRef.isReady()) {
+    navigationRef.reset(state);
+  }
+}
+
+export function goBack(): void {
+  if (navigationRef.isReady() && navigationRef.canGoBack()) {
+    navigationRef.goBack();
+  }
+}
+
+export const onReadyNavigationContainer = (): void => {
+  const currentRoute = navigationRef.getCurrentRoute();
+  routeRef.current = currentRoute ?? null;
 };
 
-export const onStateChangeNavigationContainer = () => {
+export const onStateChangeNavigationContainer = (): void => {
   const previousRoute = routeRef.current;
-  const currentRoute = navigationRef.current?.getCurrentRoute();
+  const currentRoute = navigationRef.getCurrentRoute();
 
   if (previousRoute?.name !== currentRoute?.name) {
-    routeRef.current = currentRoute;
+    routeRef.current = currentRoute ?? null;
   }
+};
+
+export const getCurrentRoute = (): Route<string> | undefined => {
+  return navigationRef.getCurrentRoute();
+};
+
+export const getRootState = (): NavigationState | undefined => {
+  return navigationRef.getRootState();
 };

@@ -1,12 +1,10 @@
+import type { ScreenProps } from '@core/infrastructure/navigation/navigation.types';
 import { useConfigSelectors } from '@core/infrastructure/storage/modules/config';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 
-export const useSplashPresenter = ({
-  navigation,
-}: NativeStackScreenProps<ReactNavigation.MainNavigator, GlobalRoutesEnum.SPLASH>) => {
+export const useSplashPresenter = ({ navigation }: ScreenProps<GlobalRoutesEnum.SPLASH>) => {
   const { flags } = useConfigSelectors();
   const opacity = useRef(new Animated.Value(0)).current;
 
