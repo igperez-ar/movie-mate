@@ -3,6 +3,7 @@ import { MovieRoutesEnum } from 'src/shared/enums/routes';
 
 export type MovieNavigatorParams = {
   [MovieRoutesEnum.DETAIL]: { id: number };
+  [MovieRoutesEnum.WATCHLIST]: undefined;
 };
 
 export type MovieCompositeRoutes = ParamListBase & {

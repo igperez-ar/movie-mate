@@ -1,3 +1,9 @@
+import { useAppDispatch } from '@core/infrastructure';
+import {
+  addWatchlist,
+  removeWatchlist,
+  useMovieSelectors,
+} from '@core/infrastructure/storage/modules/movie';
 import { useEffect, useState } from 'react';
 import { MovieRoutesEnum } from 'src/shared/enums/routes';
 import { useMovieDetailInteractor } from './detail.interactor';
@@ -15,11 +21,19 @@ export const useMovieDetailPresenter = (props: MovieDetailScreenProps) => {
     route: { params },
   } = props;
   const { executeGetDetails, executeGetSimilar } = useMovieDetailInteractor(params.id);
-
+  const { isWatchlisted } = useMovieSelectors();
+  const dispatch = useAppDispatch();
   const [movieState, setMovieState] = useState<MovieDetailState>(initialState);
+  const isSaved = isWatchlisted(params.id);
 
   const goToSimilar = (id: number) => {
     navigation.push(MovieRoutesEnum.DETAIL, { id });
+  };
+
+  const toggleWatchlist = () => {
+    if (!movieState.data) return;
+    const { id, title, poster_path } = movieState.data;
+    dispatch(isSaved ? removeWatchlist(id) : addWatchlist({ id, title, poster_path }));
   };
 
   const loadDetails = async () => {
@@ -39,10 +53,11 @@ export const useMovieDetailPresenter = (props: MovieDetailScreenProps) => {
         data: { ...response, similar: [...(prev.data?.similar ?? [])] },
       }));
     } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unknown error';
       setMovieState((prev) => ({
         ...prev,
         loading: false,
-        error: error instanceof Error ? error.message : 'Unknown error',
+        error: message,
       }));
       throw error;
     }
@@ -53,7 +68,9 @@ export const useMovieDetailPresenter = (props: MovieDetailScreenProps) => {
   }, []);
 
   return {
+    isSaved,
     movieState,
     goToSimilar,
+    toggleWatchlist,
   };
 };

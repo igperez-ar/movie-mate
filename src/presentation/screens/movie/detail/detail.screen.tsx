@@ -7,8 +7,10 @@ import type { MovieDetailScreenProps } from './detail.types';
 
 export const MovieDetailScreen: React.FC<MovieDetailScreenProps> = (props) => {
   const {
+    isSaved,
     movieState: { loading, data },
     goToSimilar,
+    toggleWatchlist,
   } = useMovieDetailPresenter(props);
 
   return (
@@ -24,6 +26,9 @@ export const MovieDetailScreen: React.FC<MovieDetailScreenProps> = (props) => {
                 <InfoText>Genre: {data.genres.map((genre) => genre.name).join(', ')}</InfoText>
                 <InfoText>Duration: {data.runtime} min</InfoText>
                 <InfoText>Rating: {data.vote_average.toFixed(1)}</InfoText>
+                <ActionButton onPress={toggleWatchlist}>
+                  <ButtonText>{isSaved ? 'Remove watchlist' : 'Add watchlist'}</ButtonText>
+                </ActionButton>
               </InfoContainer>
             </DetailHeaderContainer>
 
@@ -69,4 +74,16 @@ const InfoContainer = styled.View`
 const InfoText = styled.Text`
   color: #cccccc;
   font-size: 14px;
+`;
+
+const ActionButton = styled.TouchableOpacity`
+  background-color: #e50914;
+  padding: 12px;
+  border-radius: 6px;
+  align-items: center;
+`;
+
+const ButtonText = styled.Text`
+  color: white;
+  font-weight: 600;
 `;
