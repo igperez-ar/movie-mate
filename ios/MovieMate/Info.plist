@@ -49,18 +49,11 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>MapleMono-Bold.ttf</string>
-		<string>MapleMono-BoldItalic.ttf</string>
-		<string>MapleMono-Italic.ttf</string>
-		<string>MapleMono-Light.ttf</string>
-		<string>MapleMono-Medium.ttf</string>
-		<string>MapleMono-MediumItalic.ttf</string>
-		<string>MapleMono-Regular.ttf</string>
 		<string>MaterialDesignIcons.ttf</string>
 		<string>CascadiaMono.ttf</string>
 		<string>CascadiaMonoItalic.ttf</string>
-		<string>CascadiaCode.ttf</string>
-		<string>CascadiaCodeItalic.ttf</string>
+		<string>BukhariScript.ttf</string>
+		<string>Nunito-VariableFont_wght.ttf</string>
 	</array>
 </dict>
 </plist>

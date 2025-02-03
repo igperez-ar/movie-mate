@@ -7,22 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		036213CC9D0F4AA28A684F1D /* MapleMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F869EB2F8CE54AD0946149E3 /* MapleMono-Bold.ttf */; };
-		058F9CBD0F7F487CA69C3DCB /* MapleMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F7DA48C490544688AE58376 /* MapleMono-Medium.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-MovieMate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MovieMate.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		465700828F524C8A90BCAF63 /* MapleMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA3D77CA9134DC28B6078E2 /* MapleMono-BoldItalic.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		839FBC17E53B427F8E4E781F /* MapleMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9032FAC7E69B446FA7FCC698 /* MapleMono-Regular.ttf */; };
-		85893ED21C664A6792B016BE /* MapleMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE1783EE060440B5ACA2D614 /* MapleMono-Italic.ttf */; };
-		A7B8B26BCC394E9383815372 /* MapleMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799C01A5FDAC46969B965697 /* MapleMono-MediumItalic.ttf */; };
 		C2100C9C01D882F366A7849D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		EA42692C4B03463698F661E3 /* MapleMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BD33AB761364FFA8A0C2BD1 /* MapleMono-Light.ttf */; };
 		B2B47F2EF90B4278B4C2874C /* CascadiaMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3127A9D82A3D4EE5A0722AA6 /* CascadiaMono.ttf */; };
 		773637C317384424B7AE7A81 /* CascadiaMonoItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBC12CF28A084C8480FF73A7 /* CascadiaMonoItalic.ttf */; };
-		38871BD913154F26AD91B372 /* CascadiaCode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A108F543E1054FB6AF5A91D7 /* CascadiaCode.ttf */; };
-		4F6FEF1A65DE460EAE967905 /* CascadiaCodeItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3F4B8574D7844A497D85E84 /* CascadiaCodeItalic.ttf */; };
+		6BAAC908ECD347E4B546EA5E /* BukhariScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0AC239069D64E09BFF4E525 /* BukhariScript.ttf */; };
+		B72E04A2857046739A1200C5 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D67FD44046B24ADB87AE198C /* Nunito-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,19 +27,12 @@
 		5709B34CF0A7D63546082F79 /* Pods-MovieMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMate.release.xcconfig"; path = "Target Support Files/Pods-MovieMate/Pods-MovieMate.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-MovieMate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieMate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MovieMate/AppDelegate.swift; sourceTree = "<group>"; };
-		799C01A5FDAC46969B965697 /* MapleMono-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-MediumItalic.ttf"; path = "../assets/fonts/MapleMono-MediumItalic.ttf"; sourceTree = "<group>"; };
-		7BD33AB761364FFA8A0C2BD1 /* MapleMono-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-Light.ttf"; path = "../assets/fonts/MapleMono-Light.ttf"; sourceTree = "<group>"; };
-		7F7DA48C490544688AE58376 /* MapleMono-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-Medium.ttf"; path = "../assets/fonts/MapleMono-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MovieMate/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9032FAC7E69B446FA7FCC698 /* MapleMono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-Regular.ttf"; path = "../assets/fonts/MapleMono-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EE1783EE060440B5ACA2D614 /* MapleMono-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-Italic.ttf"; path = "../assets/fonts/MapleMono-Italic.ttf"; sourceTree = "<group>"; };
-		EFA3D77CA9134DC28B6078E2 /* MapleMono-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-BoldItalic.ttf"; path = "../assets/fonts/MapleMono-BoldItalic.ttf"; sourceTree = "<group>"; };
-		F869EB2F8CE54AD0946149E3 /* MapleMono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MapleMono-Bold.ttf"; path = "../assets/fonts/MapleMono-Bold.ttf"; sourceTree = "<group>"; };
 		3127A9D82A3D4EE5A0722AA6 /* CascadiaMono.ttf */ = {isa = PBXFileReference; name = "CascadiaMono.ttf"; path = "../assets/fonts/CascadiaMono.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EBC12CF28A084C8480FF73A7 /* CascadiaMonoItalic.ttf */ = {isa = PBXFileReference; name = "CascadiaMonoItalic.ttf"; path = "../assets/fonts/CascadiaMonoItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A108F543E1054FB6AF5A91D7 /* CascadiaCode.ttf */ = {isa = PBXFileReference; name = "CascadiaCode.ttf"; path = "../assets/fonts/CascadiaCode.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A3F4B8574D7844A497D85E84 /* CascadiaCodeItalic.ttf */ = {isa = PBXFileReference; name = "CascadiaCodeItalic.ttf"; path = "../assets/fonts/CascadiaCodeItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D0AC239069D64E09BFF4E525 /* BukhariScript.ttf */ = {isa = PBXFileReference; name = "BukhariScript.ttf"; path = "../assets/fonts/BukhariScript.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D67FD44046B24ADB87AE198C /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Nunito-VariableFont_wght.ttf"; path = "../assets/fonts/Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +71,10 @@
 		322A120F71104E0B899424AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F869EB2F8CE54AD0946149E3 /* MapleMono-Bold.ttf */,
-				EFA3D77CA9134DC28B6078E2 /* MapleMono-BoldItalic.ttf */,
-				EE1783EE060440B5ACA2D614 /* MapleMono-Italic.ttf */,
-				7BD33AB761364FFA8A0C2BD1 /* MapleMono-Light.ttf */,
-				7F7DA48C490544688AE58376 /* MapleMono-Medium.ttf */,
-				799C01A5FDAC46969B965697 /* MapleMono-MediumItalic.ttf */,
-				9032FAC7E69B446FA7FCC698 /* MapleMono-Regular.ttf */,
 				3127A9D82A3D4EE5A0722AA6 /* CascadiaMono.ttf */,
 				EBC12CF28A084C8480FF73A7 /* CascadiaMonoItalic.ttf */,
-				A108F543E1054FB6AF5A91D7 /* CascadiaCode.ttf */,
-				A3F4B8574D7844A497D85E84 /* CascadiaCodeItalic.ttf */,
+				D0AC239069D64E09BFF4E525 /* BukhariScript.ttf */,
+				D67FD44046B24ADB87AE198C /* Nunito-VariableFont_wght.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -203,17 +182,10 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				C2100C9C01D882F366A7849D /* PrivacyInfo.xcprivacy in Resources */,
-				036213CC9D0F4AA28A684F1D /* MapleMono-Bold.ttf in Resources */,
-				465700828F524C8A90BCAF63 /* MapleMono-BoldItalic.ttf in Resources */,
-				85893ED21C664A6792B016BE /* MapleMono-Italic.ttf in Resources */,
-				EA42692C4B03463698F661E3 /* MapleMono-Light.ttf in Resources */,
-				058F9CBD0F7F487CA69C3DCB /* MapleMono-Medium.ttf in Resources */,
-				A7B8B26BCC394E9383815372 /* MapleMono-MediumItalic.ttf in Resources */,
-				839FBC17E53B427F8E4E781F /* MapleMono-Regular.ttf in Resources */,
 				B2B47F2EF90B4278B4C2874C /* CascadiaMono.ttf in Resources */,
 				773637C317384424B7AE7A81 /* CascadiaMonoItalic.ttf in Resources */,
-				38871BD913154F26AD91B372 /* CascadiaCode.ttf in Resources */,
-				4F6FEF1A65DE460EAE967905 /* CascadiaCodeItalic.ttf in Resources */,
+				6BAAC908ECD347E4B546EA5E /* BukhariScript.ttf in Resources */,
+				B72E04A2857046739A1200C5 /* Nunito-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

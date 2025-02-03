@@ -5,14 +5,14 @@ import {
   GetAllTrendingUseCase,
   MovieFactory,
 } from '@core/capabilities/movies';
-import type { MovieList } from './home.types';
+import type { MovieListCategory } from './home.types';
 
 export const useHomeInteractor = (
   getAllByCategoryUseCase = new GetAllByCategoryUseCase(MovieFactory.getInstance()),
   getAllTrendingUseCase = new GetAllTrendingUseCase(MovieFactory.getInstance()),
 ) => {
   const executeGetAllLists = async () => {
-    const requests: Record<MovieList, () => Promise<MoviesResponse>> = {
+    const requests: Record<MovieListCategory, () => Promise<MoviesResponse>> = {
       trending: () => getAllTrendingUseCase.execute({ time_window: 'day' }),
       popular: () => getAllByCategoryUseCase.execute({ category: 'popular' }),
       top_rated: () => getAllByCategoryUseCase.execute({ category: 'top_rated' }),
@@ -21,13 +21,13 @@ export const useHomeInteractor = (
     };
 
     const promises = Object.entries(requests).map(
-      async ([key, fn]): Promise<{ key: MovieList; data?: MoviesResponse; error?: string }> => {
+      async ([key, fn]): Promise<{ key: MovieListCategory; data?: MoviesResponse; error?: string }> => {
         try {
           const data = await fn();
-          return { key: key as MovieList, data };
+          return { key: key as MovieListCategory, data };
         } catch (error) {
           return {
-            key: key as MovieList,
+            key: key as MovieListCategory,
             error: error instanceof Error ? error.message : 'Unknown error',
           };
         }
@@ -41,7 +41,7 @@ export const useHomeInteractor = (
         acc[result.key] = result.data?.results || null;
         return acc;
       },
-      {} as Record<MovieList, Movie[] | null>,
+      {} as Record<MovieListCategory, Movie[] | null>,
     );
   };
 

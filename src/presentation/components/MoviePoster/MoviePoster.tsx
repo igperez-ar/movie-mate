@@ -1,5 +1,5 @@
+import { Icon } from '@components/index';
 import type { Movie } from '@core/capabilities/movies';
-import Icon from '@react-native-vector-icons/material-design-icons';
 import React from 'react';
 import type { ImageProps } from 'react-native';
 import Config from 'react-native-config';
@@ -17,8 +17,8 @@ export const MoviePoster: React.FC<MoviePosterProps> = ({ quality = 'w500', ...p
 
   return (
     <PosterContainer>
-      <NoImageIcon name="camera-off" size={scale(24)} color="gray" />
-      <Poster source={{ uri: URL }} resizeMode="contain" {...props} />
+      <NoImageIcon name="camera-off" size={24} color="gray" />
+      <Poster source={{ uri: URL }} resizeMode="cover" {...props} />
     </PosterContainer>
   );
 };
@@ -31,7 +31,7 @@ const PosterContainer = styled.View`
 `;
 
 const Poster = styled.Image<MoviePosterProps>`
-  width: ${({ size }) => (size ? scale(size) + 'px' : 'undefined')};
+  ${({ size }) => (size ? `width: ${scale(size)}px` : `flex: 1`)};
   aspect-ratio: 640 / 960;
 `;
 

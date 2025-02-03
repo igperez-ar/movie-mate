@@ -1,3 +1,4 @@
+import { ExpandableActionButton } from '@components/ExpandableActionButton/ExpandableActionButton';
 import { MainContainer, MovieCarousel, MovieFeatured, ScrollContainer } from '@components/index';
 import type { ScreenProps } from '@core/infrastructure/navigation/navigation.types';
 import React from 'react';
@@ -5,23 +6,25 @@ import { View } from 'react-native';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 import styled from 'styled-components/native';
 import { useHomePresenter } from './home.presenter';
-import { MovieList } from './home.types';
+import type { MovieListCategory } from './home.types';
 
 export const HomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.HOME>> = (props) => {
-  const { movieState, featuredMovie, goToDetail } = useHomePresenter(props);
+  const { movieState, featuredMovie, goToDetail, setNextFeatured } = useHomePresenter(props);
 
   return (
     <>
       <MainContainer>
         {!movieState.loading ? (
           <ScrollContainer>
-            {Object.entries(movieState.lists).map(([category, movies]) =>
-              movies?.length ? (
+            {Object.entries(movieState.lists).map(([category, list]) =>
+              list.data?.length ? (
                 <View key={category}>
-                  <SectionTitle>{category.toUpperCase()}</SectionTitle>
+                  <TitleContainer>
+                    <SectionTitle>{list.title}</SectionTitle>
+                  </TitleContainer>
                   <MovieCarousel
-                    data={movies}
-                    onPressItem={(item) => goToDetail(item.id, category as MovieList)}
+                    data={list.data}
+                    onPressItem={(item) => goToDetail(item.id, category as MovieListCategory)}
                   />
                 </View>
               ) : null,
@@ -29,17 +32,30 @@ export const HomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.HOME>> = (props) 
           </ScrollContainer>
         ) : null}
         {featuredMovie ? (
-          <MovieFeatured {...featuredMovie} onPress={() => goToDetail(featuredMovie.id)} />
+          <ExpandableActionButton isExpanded>
+            <MovieFeatured
+              movie={featuredMovie}
+              onPress={() => goToDetail(featuredMovie.id)}
+              onComplete={setNextFeatured}
+            />
+          </ExpandableActionButton>
         ) : null}
       </MainContainer>
     </>
   );
 };
 
+const TitleContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-top: ${({ theme }) => theme.spacing['2xl']}px;
+  margin-bottom: ${({ theme }) => theme.spacing['md-plus']}px;
+`;
+
 const SectionTitle = styled.Text`
-  color: white;
+  color: ${({ theme }) => theme.colors.text.primary};
   font-size: 20px;
-  font-weight: 600;
-  margin-top: 24px;
-  margin-bottom: 8px;
+  font-weight: bold;
+  font-family: Nunito;
+  text-transform: capitalize;
 `;

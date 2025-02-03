@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import { Animated, Platform, TouchableOpacity, View } from 'react-native';
-import LinearGradient, { LinearGradientProps } from 'react-native-linear-gradient';
+import { GlowContainer, GradientContainer } from '@components/index';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import { LinearGradientProps } from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 
 type TicketButtonProps = {
@@ -18,55 +19,15 @@ export const TicketButton: React.FC<TicketButtonProps> = ({
   glowColor,
   colors,
 }) => {
-  const rotateAnimation = useRef(new Animated.Value(0)).current;
-  const glowAnimation = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    Animated.loop(
-      Animated.parallel([
-        Animated.timing(rotateAnimation, {
-          toValue: 1,
-          duration: 2000,
-          useNativeDriver: false,
-        }),
-        Animated.sequence([
-          Animated.timing(glowAnimation, {
-            toValue: 1,
-            duration: 1000,
-            useNativeDriver: false,
-          }),
-          Animated.timing(glowAnimation, {
-            toValue: 0,
-            duration: 1000,
-            useNativeDriver: false,
-          }),
-        ]),
-      ]),
-    ).start();
-  }, []);
-
-  const rotateInterpolation = rotateAnimation.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
-
   return (
     <TouchableOpacity onPress={onPress}>
-      <GlowContainer
-        glowColor={!isActive ? glowColor : undefined}
-        style={{ shadowOpacity: glowAnimation }}
-      >
+      <GlowContainer color={isActive ? glowColor : undefined}>
         <TicketContainer>
-          <GradientContainer
-            style={{
-              transform: [{ rotate: rotateInterpolation }],
-            }}
-          >
-            <Gradient colors={colors} useAngle angle={45}></Gradient>
+          <GradientContainer colors={colors}>
+            <TextContainer>
+              <ButtonText>{title}</ButtonText>
+            </TextContainer>
           </GradientContainer>
-          <TextContainer>
-            <ButtonText>{title}</ButtonText>
-          </TextContainer>
         </TicketContainer>
         <DetailsContainer>
           <DottedDivider />
@@ -78,37 +39,11 @@ export const TicketButton: React.FC<TicketButtonProps> = ({
   );
 };
 
-const GlowContainer = styled(Animated.View)<{ glowColor?: string }>`
-  ${({ glowColor, theme }) =>
-    glowColor &&
-    Platform.select({
-      ios: `
-      shadow-color: ${glowColor};
-      shadow-offset: 0px 0px;
-      shadow-radius: ${theme.spacing.md}px;
-    `,
-      android: `
-      elevation: 5;
-    `,
-    })}
-`;
-
 const TicketContainer = styled.View`
   overflow: hidden;
   flex-direction: row;
   align-items: center;
   border-radius: 4;
-`;
-
-const Gradient = styled(LinearGradient)`
-  flex: 1;
-`;
-
-const GradientContainer = styled(Animated.View)`
-  position: absolute;
-  width: 120%;
-  left: -10%;
-  aspect-ratio: 1;
 `;
 
 const DetailsContainer = styled.View`
@@ -135,8 +70,8 @@ const OpacitySquare = styled.View<{ isActive: boolean }>`
   width: 100%;
   height: 100%;
   justify-content: center;
-  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  background-color: #000000ac;
+  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
+  background-color: ${({theme}) => theme.colors.overlay};
 `;
 
 const Circle = styled.View<{ color?: string }>`
@@ -156,8 +91,8 @@ const TextContainer = styled.View`
 
 const ButtonText = styled.Text`
   text-transform: uppercase;
-  font-size: 14;
-  font-family: Maple Mono;
+  font-size: 14px;
+  font-family: Nunito;
   font-weight: bold;
-  color: white;
+  color: ${({ theme }) => theme.colors.text.primary};
 `;

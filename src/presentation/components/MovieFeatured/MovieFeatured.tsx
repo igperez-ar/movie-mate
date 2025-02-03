@@ -1,53 +1,86 @@
-import { MoviePoster } from '@components/index';
-import { Movie } from '@core/capabilities/movies';
+import { Icon, MoviePoster, ProgressBar } from '@components/index';
+import type { Movie } from '@core/capabilities/movies';
+import { View } from 'react-native';
 import styled from 'styled-components/native';
 
-type MovieFeaturedProps = Movie & {
+type MovieFeaturedProps = {
+  movie: Movie;
   onPress?: () => void;
+  onComplete?: () => void;
 };
 
-export const MovieFeatured: React.FC<MovieFeaturedProps> = (props) => {
+export const MovieFeatured: React.FC<MovieFeaturedProps> = ({ movie, onPress, onComplete }) => {
   return (
     <FeaturedContainer>
-      <MoviePoster path={props.poster_path} size={130} />
-      <DetailContainer>
-        <DescriptionText numberOfLines={6}>{props.overview}</DescriptionText>
-        {props.onPress ? (
-          <ActionButton onPress={props.onPress}>
+      <InnerContainer>
+        <MoviePoster path={movie.poster_path} size={140} />
+        <DetailContainer>
+          <View>
+            <TitleContainer>
+              <Title numberOfLines={2}>{movie.title}</Title>
+              <Icon name="close" size={16} />
+            </TitleContainer>
+            <Description numberOfLines={6}>{movie.overview}</Description>
+          </View>
+          <ActionButton onPress={onPress}>
             <ButtonText>See more</ButtonText>
           </ActionButton>
-        ) : null}
-      </DetailContainer>
+        </DetailContainer>
+      </InnerContainer>
+      <ProgressBar key={movie.id} onComplete={onComplete} />
     </FeaturedContainer>
   );
 };
 
 const FeaturedContainer = styled.View`
-  bottom: 0px;
+  flex: 1;
+  padding: ${({ theme }) => theme.spacing['md-plus']}px;
+  background-color: ${({ theme }) => theme.colors.surface};
+`;
+
+const InnerContainer = styled.View`
+  flex: 1;
   flex-direction: row;
-  padding: 16px;
-  background-color: #1a1a1a;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 const DetailContainer = styled.View`
   flex: 1;
-  margin-left: 16px;
+  margin-left: ${({ theme }) => theme.spacing['md-plus']}px;
   justify-content: space-between;
 `;
 
-const DescriptionText = styled.Text`
-  color: #cccccc;
+const TitleContainer = styled.View`
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+
+const Title = styled.Text`
+  flex: 1;
+  margin-right: ${({ theme }) => theme.spacing.lg}px;
+  color: ${({ theme }) => theme.colors.text.primary};
+  font-family: Cascadia Mono;
+  font-weight: bold;
+  font-size: 16px;
+`;
+
+const Description = styled.Text`
+  color: ${({ theme }) => theme.colors.text.secondary};
   line-height: 20px;
+  font-family: Nunito;
 `;
 
 const ActionButton = styled.TouchableOpacity`
-  background-color: #e50914;
-  padding: 12px;
+  background-color: ${({ theme }) => theme.colors.primary};
+  padding: ${({ theme }) => theme.spacing['md-plus']}px;
   border-radius: 6px;
   align-items: center;
 `;
 
 const ButtonText = styled.Text`
-  color: white;
-  font-weight: 600;
+  color: ${({ theme }) => theme.colors.text.primary};
+  font-weight: bold;
+  font-family: Nunito;
 `;

@@ -2,7 +2,7 @@ import { MoviePoster } from '@components/index';
 import type { Movie } from '@core/capabilities/movies';
 import React from 'react';
 import { TouchableOpacity, type FlatListProps, type ListRenderItem } from 'react-native';
-import { screenWidth } from 'src/shared/constants';
+import { SCREEN_WIDTH } from 'src/shared/constants';
 import { scale } from 'src/shared/utils/sizes';
 import styled from 'styled-components/native';
 
@@ -44,10 +44,10 @@ export const MovieCarousel: React.FC<MovieCarouselProps> = ({
 };
 
 const Carousel = styled.FlatList`
-  width: ${screenWidth}px;
+  width: ${SCREEN_WIDTH}px;
   margin: 0 -${({ theme }) => theme.spacing.lg}px;
 `;
 
 const Separator = styled.TouchableOpacity`
-  width: ${({ theme }) => theme.spacing.lg}px;
+  width: ${({ theme }) => theme.spacing.md}px;
 `;

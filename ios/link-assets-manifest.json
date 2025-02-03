@@ -2,12 +2,8 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/CascadiaCode.ttf",
-      "sha1": "a44b45dcfbea521ce920f73d31aea62b6a8696ca"
-    },
-    {
-      "path": "assets/fonts/CascadiaCodeItalic.ttf",
-      "sha1": "ac8c1b219f3978ff907c2eb6f4bad895ee878565"
+      "path": "assets/fonts/BukhariScript.ttf",
+      "sha1": "b60d7e9b97bbba1b213e319457ef9369476ae0e2"
     },
     {
       "path": "assets/fonts/CascadiaMono.ttf",
@@ -18,32 +14,8 @@
       "sha1": "031b4a0a032d1d2efd16bed7397cc5f7de0dc0b1"
     },
     {
-      "path": "assets/fonts/MapleMono-Bold.ttf",
-      "sha1": "436301dd2727fe33ea854b3caf2660c687d25c7b"
-    },
-    {
-      "path": "assets/fonts/MapleMono-BoldItalic.ttf",
-      "sha1": "28c5c9c1afc16a8d52091b16e775b83d2f8df737"
-    },
-    {
-      "path": "assets/fonts/MapleMono-Italic.ttf",
-      "sha1": "b83a8b5f6150781fdb3c394c5fe62a186e3df1eb"
-    },
-    {
-      "path": "assets/fonts/MapleMono-Light.ttf",
-      "sha1": "7445ae6d749293def474591910d335f8b06ed30c"
-    },
-    {
-      "path": "assets/fonts/MapleMono-Medium.ttf",
-      "sha1": "ed365d5723f3d9d7bb89048f522ca7ee5e98b947"
-    },
-    {
-      "path": "assets/fonts/MapleMono-MediumItalic.ttf",
-      "sha1": "23362e63a644c29d37b33d8c9242cb4cb27ea34a"
-    },
-    {
-      "path": "assets/fonts/MapleMono-Regular.ttf",
-      "sha1": "22e24115b3117074e75ce4ccab121932cb830549"
+      "path": "assets/fonts/Nunito-VariableFont_wght.ttf",
+      "sha1": "c2adb9c3bcb684afc16cab5e70e8da3d3700a91e"
     }
   ]
 }

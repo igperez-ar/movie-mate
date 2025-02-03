@@ -1,112 +1,77 @@
 import {
+  Icon,
   MainContainer,
   MovieCarousel,
   MoviePoster,
   ScrollContainer,
   TicketButton,
 } from '@components/index';
-import Icon from '@react-native-vector-icons/material-design-icons';
-import type { MovieList } from '@screens/home/home.types';
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
-import { scale } from 'src/shared/utils/sizes';
+import { ActivityIndicator } from 'react-native';
 import styled from 'styled-components/native';
 import { useMovieDetailPresenter } from './detail.presenter';
 import type { MovieDetailScreenProps } from './detail.types';
 
-const categoryColors: Record<MovieList | 'default', { colors: string[]; glowColor: string }> = {
-  trending: {
-    colors: ['#ffae00', '#ff7700', '#ff4d00', '#ff1a00', '#e00000'],
-    glowColor: '#ff7700',
-  },
-  popular: {
-    colors: ['#e7e2f3', '#a7b2e6', '#688cca', '#496d9c', '#2d3c67'],
-    glowColor: '#a7b2e6',
-  },
-  top_rated: {
-    colors: ['#ffd900', '#ffea00', '#ffc300', '#ffa600', '#ff8c00'],
-    glowColor: '#ffea00',
-  },
-  upcoming: {
-    colors: ['#b29dd8', '#8959c5', '#4f3d8a', '#2c2a6f', '#1e1a5b'],
-    glowColor: '#8959c5',
-  },
-  now_playing: {
-    colors: ['#b9dae9', '#a5c6d5', '#7ca2b1', '#4f7f8c', '#2d5b67'],
-    glowColor: '#a5c6d5',
-  },
-  default: {
-    glowColor: '#ff6f91',
-    colors: ['#845ec2', '#d65db1', '#ff6f91', '#ff9671', '#ffc75f', '#f9f871'],
-  },
-};
-
 export const MovieDetailScreen: React.FC<MovieDetailScreenProps> = (props) => {
   const {
-    isSaved,
-    movieState: { loading, data },
+    isWatchlisted,
+    movieState: { isLoading, data },
+    categoryColors,
     goToSimilar,
     toggleWatchlist,
   } = useMovieDetailPresenter(props);
-  const category = props.route.params.category ?? 'default';
+
+  const renderContent = () => {
+    if (isLoading) return <ActivityIndicator />;
+
+    if (data)
+      return (
+        <>
+          <Title>{data.title}</Title>
+          <DetailHeaderContainer>
+            <PosterContainer>
+              <MoviePoster path={data.poster_path} quality="w780" />
+            </PosterContainer>
+            <InfoContainer>
+              <Text>{data.genres.map((genre) => genre.name).join(', ')}</Text>
+              <DetailsContainer>
+                <AttributeContainer>
+                  <Icon name="calendar" size={20} />
+                  <AttributeText>{new Date(data.release_date).getFullYear()}</AttributeText>
+                </AttributeContainer>
+                <AttributeContainer>
+                  <Icon name="clock" size={20} />
+                  <AttributeText>{data.runtime} min</AttributeText>
+                </AttributeContainer>
+                <AttributeContainer>
+                  <Icon name="star" size={20} />
+                  <AttributeText>{data.vote_average.toFixed(1)}</AttributeText>
+                </AttributeContainer>
+              </DetailsContainer>
+              <TicketButton
+                title={isWatchlisted ? 'watchlisted' : '+watchlist'}
+                isActive={!isWatchlisted}
+                onPress={toggleWatchlist}
+                {...categoryColors}
+              />
+            </InfoContainer>
+          </DetailHeaderContainer>
+          <SectionTitle>Synopsis</SectionTitle>
+          <DescriptionText>{data.overview}</DescriptionText>
+          {data.similar?.length ? (
+            <>
+              <SectionTitle>Recommended</SectionTitle>
+              <MovieCarousel data={data.similar} onPressItem={(item) => goToSimilar(item.id)} />
+            </>
+          ) : null}
+        </>
+      );
+    return null;
+  };
 
   return (
     <MainContainer>
-      <ScrollContainer>
-        {loading ? (
-          <ActivityIndicator />
-        ) : (
-          data && (
-            <>
-              <Title>{data.title}</Title>
-              <DetailHeaderContainer>
-                <View
-                  style={{
-                    flex: 1,
-                  }}
-                >
-                  <MoviePoster path={data.poster_path} quality="w780" />
-                </View>
-                <InfoContainer>
-                  <InfoText style={{}}>
-                    {data.genres.map((genre) => genre.name).join(', ')}
-                  </InfoText>
-                  <View style={{ justifyContent: 'space-around', marginVertical: 16 }}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
-                      <Icon name="calendar" color="white" size={scale(20)} />
-                      <InfoText style={{ marginLeft: 8 }}>
-                        {new Date(data.release_date).getFullYear()}
-                      </InfoText>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
-                      <Icon name="clock" color="white" size={scale(20)} />
-                      <InfoText style={{ marginLeft: 8 }}>{data.runtime} min</InfoText>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
-                      <Icon name="star" color="white" size={scale(20)} />
-                      <InfoText style={{ marginLeft: 8 }}>{data.vote_average.toFixed(1)}</InfoText>
-                    </View>
-                  </View>
-                  <TicketButton
-                    title={isSaved ? 'watchlisted' : '+watchlist'}
-                    isActive={isSaved}
-                    onPress={toggleWatchlist}
-                    {...categoryColors[category]}
-                  />
-                </InfoContainer>
-              </DetailHeaderContainer>
-              <SectionTitle>Synopsis</SectionTitle>
-              <DescriptionText>{data.overview}</DescriptionText>
-              {data.similar?.length ? (
-                <>
-                  <SectionTitle>Recommended</SectionTitle>
-                  <MovieCarousel data={data.similar} onPressItem={(item) => goToSimilar(item.id)} />
-                </>
-              ) : null}
-            </>
-          )
-        )}
-      </ScrollContainer>
+      <ScrollContainer>{renderContent()}</ScrollContainer>
     </MainContainer>
   );
 };
@@ -114,7 +79,7 @@ export const MovieDetailScreen: React.FC<MovieDetailScreenProps> = (props) => {
 const Title = styled.Text`
   align-self: center;
   max-width: 80%;
-  color: white;
+  color: ${({ theme }) => theme.colors.text.primary};
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 24px;
@@ -123,23 +88,43 @@ const Title = styled.Text`
 `;
 
 const SectionTitle = styled.Text`
-  color: white;
+  color: ${({ theme }) => theme.colors.text.primary};
   font-size: 20px;
   font-weight: 600;
   margin-top: 24px;
   margin-bottom: 8px;
-  font-family: Cascadia Mono;
+  font-family: Nunito;
 `;
 
-const DescriptionText = styled.Text`
-  color: #cccccc;
+const PosterContainer = styled.View`
+  flex: 1;
+`;
+
+const Text = styled.Text`
+  color: ${({ theme }) => theme.colors.text.secondary};
+  font-size: 14px;
+  text-align: center;
+  font-family: Nunito;
+`;
+
+const DescriptionText = styled(Text)`
   line-height: 20px;
   text-align: justify;
 `;
 
 const DetailHeaderContainer = styled.View`
-  align-items: center;
   flex-direction: row;
+`;
+
+const DetailsContainer = styled.View`
+  justify-content: 'space-around';
+  margin: ${({ theme }) => theme.spacing['md-plus']}px 0px;
+`;
+
+const AttributeContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-top: ${({ theme }) => theme.spacing.md}px;
 `;
 
 const InfoContainer = styled.View`
@@ -148,8 +133,6 @@ const InfoContainer = styled.View`
   justify-content: space-around;
 `;
 
-const InfoText = styled.Text`
-  color: #cccccc;
-  font-size: 14px;
-  text-align: center;
+const AttributeText = styled(Text)`
+  margin-left: ${({ theme }) => theme.spacing.md};
 `;

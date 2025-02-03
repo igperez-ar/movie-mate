@@ -1,9 +1,8 @@
-import { MoviePoster } from '@components/MoviePoster/MoviePoster';
 import type { MovieWatchlisted } from '@core/infrastructure/storage/modules/movie';
 import React from 'react';
-import { Image, type FlatListProps, type ListRenderItem } from 'react-native';
+import { type FlatListProps, type ListRenderItem } from 'react-native';
 import Config from 'react-native-config';
-import { screenWidth } from 'src/shared/constants';
+import { SCREEN_WIDTH } from 'src/shared/constants';
 import styled from 'styled-components/native';
 
 type MovieGridProps = Partial<FlatListProps<MovieWatchlisted>> & {
@@ -43,7 +42,7 @@ const GridItem = styled.TouchableOpacity`
   border-radius: 8px;
   overflow: hidden;
   margin: ${({ theme }) => theme.spacing.sm}px;
-  max-width: ${({ theme }) => screenWidth / 3 - (theme.spacing.sm + theme.spacing['md-plus'])}px;
+  max-width: ${({ theme }) => SCREEN_WIDTH / 3 - (theme.spacing.sm + theme.spacing['md-plus'])}px;
 `;
 
 const Poster = styled.Image`
@@ -51,9 +50,10 @@ const Poster = styled.Image`
 `;
 
 const Title = styled.Text`
-  color: white;
-  font-family: MapleMono-Bold;
+  color: ${({ theme }) => theme.colors.text.primary};
+  font-family: Cascadia Mono;
+  font-weight: bold;
   font-size: 12;
   letter-spacing: -0.5;
-  padding: 8px;
+  padding: ${({theme}) => theme.spacing.md}px;
 `;
