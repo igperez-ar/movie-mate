@@ -1,8 +1,9 @@
 import type { NavigatorScreenParams, ParamListBase } from '@react-navigation/native';
+import type { MovieList } from '@screens/home/home.types';
 import { MovieRoutesEnum } from 'src/shared/enums/routes';
 
 export type MovieNavigatorParams = {
-  [MovieRoutesEnum.DETAIL]: { id: number };
+  [MovieRoutesEnum.DETAIL]: { id: number; category?: MovieList };
   [MovieRoutesEnum.WATCHLIST]: undefined;
 };
 

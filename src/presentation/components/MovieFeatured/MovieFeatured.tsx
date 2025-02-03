@@ -9,7 +9,7 @@ type MovieFeaturedProps = Movie & {
 export const MovieFeatured: React.FC<MovieFeaturedProps> = (props) => {
   return (
     <FeaturedContainer>
-      <MoviePoster path={props.poster_path} size={180} />
+      <MoviePoster path={props.poster_path} size={130} />
       <DetailContainer>
         <DescriptionText numberOfLines={6}>{props.overview}</DescriptionText>
         {props.onPress ? (

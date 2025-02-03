@@ -5,4 +5,5 @@ export * from './MovieCarousel/MovieCarousel';
 export * from './MovieFeatured/MovieFeatured';
 export * from './MovieGrid/MovieGrid';
 export * from './MoviePoster/MoviePoster';
+export * from './TicketButton/TicketButton';
 

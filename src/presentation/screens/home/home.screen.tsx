@@ -5,6 +5,7 @@ import { View } from 'react-native';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 import styled from 'styled-components/native';
 import { useHomePresenter } from './home.presenter';
+import { MovieList } from './home.types';
 
 export const HomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.HOME>> = (props) => {
   const { movieState, featuredMovie, goToDetail } = useHomePresenter(props);
@@ -18,7 +19,10 @@ export const HomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.HOME>> = (props) 
               movies?.length ? (
                 <View key={category}>
                   <SectionTitle>{category.toUpperCase()}</SectionTitle>
-                  <MovieCarousel data={movies} onPressItem={(item) => goToDetail(item.id)} />
+                  <MovieCarousel
+                    data={movies}
+                    onPressItem={(item) => goToDetail(item.id, category as MovieList)}
+                  />
                 </View>
               ) : null,
             )}

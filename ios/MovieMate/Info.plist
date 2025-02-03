@@ -26,14 +26,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +47,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MapleMono-Bold.ttf</string>
+		<string>MapleMono-BoldItalic.ttf</string>
+		<string>MapleMono-Italic.ttf</string>
+		<string>MapleMono-Light.ttf</string>
+		<string>MapleMono-Medium.ttf</string>
+		<string>MapleMono-MediumItalic.ttf</string>
+		<string>MapleMono-Regular.ttf</string>
+		<string>MaterialDesignIcons.ttf</string>
+		<string>CascadiaMono.ttf</string>
+		<string>CascadiaMonoItalic.ttf</string>
+		<string>CascadiaCode.ttf</string>
+		<string>CascadiaCodeItalic.ttf</string>
+	</array>
 </dict>
 </plist>

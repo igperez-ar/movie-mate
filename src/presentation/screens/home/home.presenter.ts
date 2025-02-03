@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { GlobalRoutesEnum, MovieRoutesEnum } from 'src/shared/enums/routes';
 import { getRandomElement } from 'src/shared/utils/helpers';
 import { useHomeInteractor } from './home.interactor';
-import type { MovieListState } from './home.types';
+import type { MovieList, MovieListState } from './home.types';
 
 const initialState: MovieListState = {
   loading: true,
@@ -20,10 +20,10 @@ export const useHomePresenter = ({ navigation }: ScreenProps<GlobalRoutesEnum.HO
   const { executeGetAllLists } = useHomeInteractor();
   const [movieState, setMovieState] = useState<MovieListState>(initialState);
 
-  const goToDetail = (id: number) => {
+  const goToDetail = (id: number, category?: MovieList) => {
     navigation.navigate(MovieRoutesEnum.STACK, {
       screen: MovieRoutesEnum.DETAIL,
-      params: { id },
+      params: { id, category },
     });
   };
 
