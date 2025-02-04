@@ -9,13 +9,13 @@ export const useSplashPresenter = ({ navigation }: ScreenProps<GlobalRoutesEnum.
   const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    Animated.timing(opacity, {
+    const animation = Animated.timing(opacity, {
       toValue: 1,
       duration: 3000,
-      useNativeDriver: true,
-    }).start(({ finished }) => {
-      if (finished) goNextScreen();
+      useNativeDriver: false,
     });
+    animation.start(goNextScreen);
+    return () => animation.stop();
   }, [opacity, navigation]);
 
   const goNextScreen = async () => {

@@ -9,5 +9,5 @@ export const useWatchlistPresenter = ({ navigation }: WatchlistScreenProps) => {
     navigation.navigate(MovieRoutesEnum.DETAIL, { id });
   };
 
-  return { watchlist, goToDetail };
+  return { watchlist: [...watchlist].reverse(), goToDetail };
 };

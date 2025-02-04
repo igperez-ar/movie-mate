@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Bukhari-Script.ttf",
+      "sha1": "b60d7e9b97bbba1b213e319457ef9369476ae0e2"
+    },
+    {
+      "path": "assets/fonts/Cascadia-Mono-Bold.ttf",
+      "sha1": "dbd419f60da9d6559032b5df23e34bf00b098166"
+    },
+    {
+      "path": "assets/fonts/Cascadia-Mono-Medium.ttf",
+      "sha1": "27631cc85cf37599ec0d536cbf70d3979e4c4e19"
+    },
+    {
+      "path": "assets/fonts/Cascadia-Mono-Regular.ttf",
+      "sha1": "5b50a597bdd9a744d8aea36d53c1c6d56030e9c8"
+    },
+    {
+      "path": "assets/fonts/Nunito-Bold.ttf",
+      "sha1": "d8091536d0fab37a3239067f708a0221070835da"
+    },
+    {
+      "path": "assets/fonts/Nunito-Medium.ttf",
+      "sha1": "941255b6a8c1e2d286ed9613bd6b354e2423dad9"
+    },
+    {
+      "path": "assets/fonts/Nunito-Regular.ttf",
+      "sha1": "465c464793593babb53e51e2a56562cdd79c237d"
+    }
+  ]
+}

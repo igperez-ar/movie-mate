@@ -1,47 +1,65 @@
-import { navigate, reset } from '@core/infrastructure/navigation/root-navigation';
+import { Icon } from '@components/Icon/Icon';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import { GlobalRoutesEnum, MovieRoutesEnum } from 'src/shared/enums/routes';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 import styled from 'styled-components/native';
 
 export const Header: React.FC = () => {
+  const navigation = useNavigation();
+  const currentRoute = useRoute().name;
+
+  const goToHome = () => {
+    if (currentRoute !== GlobalRoutesEnum.HOME) {
+      navigation.reset({ index: 0, routes: [{ name: GlobalRoutesEnum.HOME }] });
+    }
+  };
+
+  const goToWatchlist = () => {
+    navigation.navigate(MovieRoutesEnum.STACK, { screen: MovieRoutesEnum.WATCHLIST });
+  };
+
   return (
     <HeaderContainer>
-      <TouchableOpacity
-        onPress={() => reset({ routes: [{ name: GlobalRoutesEnum.HOME }], index: 0 })}
-      >
-        <Logo>MOVIEAPP</Logo>
+      <ActionContainer align="flex-start">
+        {navigation.canGoBack() && (
+          <TouchableOpacity onPress={navigation.goBack}>
+            <Icon name="arrow-left" size={24} />
+          </TouchableOpacity>
+        )}
+      </ActionContainer>
+      <TouchableOpacity onPress={goToHome}>
+        <Title>MovieMate</Title>
       </TouchableOpacity>
-      <HeaderDivider />
-      <TouchableOpacity
-        onPress={() => navigate(MovieRoutesEnum.STACK, { screen: MovieRoutesEnum.WATCHLIST })}
-      >
-        <HeaderTitle>Watchlist</HeaderTitle>
-      </TouchableOpacity>
+      <ActionContainer align="flex-end">
+        {currentRoute !== MovieRoutesEnum.WATCHLIST && (
+          <TouchableOpacity onPress={goToWatchlist}>
+            <Icon name="ticket" size={24} />
+          </TouchableOpacity>
+        )}
+      </ActionContainer>
     </HeaderContainer>
   );
 };
 
 const HeaderContainer = styled.View`
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 20px 16px;
-  background-color: #1a1a1a;
+  padding: ${({ theme }) => `${theme.spacing['md-plus']}px ${theme.spacing['lg']}px`};
+  background-color: ${({ theme }) => theme.colors.surface};
 `;
 
-const Logo = styled.Text`
-  color: #e50914;
-  font-size: 24px;
-  font-weight: 700;
+const Title = styled.Text`
+  ${({ theme }) => createTypographyStyles(theme.typography.logo)}
+  align-self: center;
+  text-align: center;
 `;
 
-const HeaderTitle = styled.Text`
-  color: white;
-  font-size: 18px;
-`;
-
-const HeaderDivider = styled.View`
-  height: 24px;
-  width: 1px;
-  background-color: #404040;
-  margin: 0 16px;
+type AnimationContainerProps = {
+  align?: string;
+};
+const ActionContainer = styled.View<AnimationContainerProps>`
+  flex: 1;
+  align-items: ${(props) => props.align};
 `;

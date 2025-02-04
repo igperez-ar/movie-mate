@@ -1,6 +1,6 @@
-import { screenHeight, screenWidth } from '../constants';
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../constants';
 
-const [shortDimension, longDimension] = screenWidth < screenHeight ? [screenWidth, screenHeight] : [screenHeight, screenWidth];
+const [shortDimension, longDimension] = SCREEN_WIDTH < SCREEN_HEIGHT ? [SCREEN_WIDTH, SCREEN_HEIGHT] : [SCREEN_HEIGHT, SCREEN_WIDTH];
 
 const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 812;
