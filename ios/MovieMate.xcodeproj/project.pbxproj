@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-MovieMate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MovieMate.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		140C393CB9F74694964C5976 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56407BDE8BB7480EB76DDC3E /* Nunito-Bold.ttf */; };
+		3CE42691C1D94D01B171A40D /* Cascadia-Mono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A25EF600865488D898B5096 /* Cascadia-Mono-Regular.ttf */; };
+		5B9F50CBAB5040AEB04E733A /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0CE2B232505420F965F17E0 /* Nunito-Medium.ttf */; };
+		5BA254CFA42144B586D6BBD4 /* Bukhari-Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B90EB14BE7054170A5FE4544 /* Bukhari-Script.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		848B7F6D7AA6442082078ACE /* Cascadia-Mono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28CEAA256F4F4EFD9C8ED161 /* Cascadia-Mono-Bold.ttf */; };
+		974A8C3D2B58461C8107F911 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 191969A92F194B96958FBE5F /* Nunito-Regular.ttf */; };
 		C2100C9C01D882F366A7849D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		B2B47F2EF90B4278B4C2874C /* CascadiaMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3127A9D82A3D4EE5A0722AA6 /* CascadiaMono.ttf */; };
-		773637C317384424B7AE7A81 /* CascadiaMonoItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBC12CF28A084C8480FF73A7 /* CascadiaMonoItalic.ttf */; };
-		6BAAC908ECD347E4B546EA5E /* BukhariScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0AC239069D64E09BFF4E525 /* BukhariScript.ttf */; };
-		B72E04A2857046739A1200C5 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D67FD44046B24ADB87AE198C /* Nunito-VariableFont_wght.ttf */; };
+		CBB9AC40DDF04B71837413FE /* Cascadia-Mono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69157D282BC64E64B8484E8B /* Cascadia-Mono-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +26,19 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MovieMate/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MovieMate/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = MovieMate/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		191969A92F194B96958FBE5F /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		1A25EF600865488D898B5096 /* Cascadia-Mono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cascadia-Mono-Regular.ttf"; path = "../assets/fonts/Cascadia-Mono-Regular.ttf"; sourceTree = "<group>"; };
+		28CEAA256F4F4EFD9C8ED161 /* Cascadia-Mono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cascadia-Mono-Bold.ttf"; path = "../assets/fonts/Cascadia-Mono-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-MovieMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMate.debug.xcconfig"; path = "Target Support Files/Pods-MovieMate/Pods-MovieMate.debug.xcconfig"; sourceTree = "<group>"; };
+		56407BDE8BB7480EB76DDC3E /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-MovieMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMate.release.xcconfig"; path = "Target Support Files/Pods-MovieMate/Pods-MovieMate.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-MovieMate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieMate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69157D282BC64E64B8484E8B /* Cascadia-Mono-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cascadia-Mono-Medium.ttf"; path = "../assets/fonts/Cascadia-Mono-Medium.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MovieMate/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MovieMate/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B90EB14BE7054170A5FE4544 /* Bukhari-Script.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Bukhari-Script.ttf"; path = "../assets/fonts/Bukhari-Script.ttf"; sourceTree = "<group>"; };
+		E0CE2B232505420F965F17E0 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Medium.ttf"; path = "../assets/fonts/Nunito-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		3127A9D82A3D4EE5A0722AA6 /* CascadiaMono.ttf */ = {isa = PBXFileReference; name = "CascadiaMono.ttf"; path = "../assets/fonts/CascadiaMono.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EBC12CF28A084C8480FF73A7 /* CascadiaMonoItalic.ttf */ = {isa = PBXFileReference; name = "CascadiaMonoItalic.ttf"; path = "../assets/fonts/CascadiaMonoItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D0AC239069D64E09BFF4E525 /* BukhariScript.ttf */ = {isa = PBXFileReference; name = "BukhariScript.ttf"; path = "../assets/fonts/BukhariScript.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D67FD44046B24ADB87AE198C /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Nunito-VariableFont_wght.ttf"; path = "../assets/fonts/Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +77,15 @@
 		322A120F71104E0B899424AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3127A9D82A3D4EE5A0722AA6 /* CascadiaMono.ttf */,
-				EBC12CF28A084C8480FF73A7 /* CascadiaMonoItalic.ttf */,
-				D0AC239069D64E09BFF4E525 /* BukhariScript.ttf */,
-				D67FD44046B24ADB87AE198C /* Nunito-VariableFont_wght.ttf */,
+				B90EB14BE7054170A5FE4544 /* Bukhari-Script.ttf */,
+				28CEAA256F4F4EFD9C8ED161 /* Cascadia-Mono-Bold.ttf */,
+				69157D282BC64E64B8484E8B /* Cascadia-Mono-Medium.ttf */,
+				1A25EF600865488D898B5096 /* Cascadia-Mono-Regular.ttf */,
+				56407BDE8BB7480EB76DDC3E /* Nunito-Bold.ttf */,
+				E0CE2B232505420F965F17E0 /* Nunito-Medium.ttf */,
+				191969A92F194B96958FBE5F /* Nunito-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -182,10 +190,13 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				C2100C9C01D882F366A7849D /* PrivacyInfo.xcprivacy in Resources */,
-				B2B47F2EF90B4278B4C2874C /* CascadiaMono.ttf in Resources */,
-				773637C317384424B7AE7A81 /* CascadiaMonoItalic.ttf in Resources */,
-				6BAAC908ECD347E4B546EA5E /* BukhariScript.ttf in Resources */,
-				B72E04A2857046739A1200C5 /* Nunito-VariableFont_wght.ttf in Resources */,
+				5BA254CFA42144B586D6BBD4 /* Bukhari-Script.ttf in Resources */,
+				848B7F6D7AA6442082078ACE /* Cascadia-Mono-Bold.ttf in Resources */,
+				CBB9AC40DDF04B71837413FE /* Cascadia-Mono-Medium.ttf in Resources */,
+				3CE42691C1D94D01B171A40D /* Cascadia-Mono-Regular.ttf in Resources */,
+				140C393CB9F74694964C5976 /* Nunito-Bold.ttf in Resources */,
+				5B9F50CBAB5040AEB04E733A /* Nunito-Medium.ttf in Resources */,
+				974A8C3D2B58461C8107F911 /* Nunito-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +296,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2637TM6CQC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MovieMate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -313,6 +325,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2637TM6CQC;
 				INFOPLIST_FILE = MovieMate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,10 +414,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -473,10 +483,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

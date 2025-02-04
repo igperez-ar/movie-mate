@@ -50,10 +50,13 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialDesignIcons.ttf</string>
-		<string>CascadiaMono.ttf</string>
-		<string>CascadiaMonoItalic.ttf</string>
-		<string>BukhariScript.ttf</string>
-		<string>Nunito-VariableFont_wght.ttf</string>
+		<string>Bukhari-Script.ttf</string>
+		<string>Cascadia-Mono-Bold.ttf</string>
+		<string>Cascadia-Mono-Medium.ttf</string>
+		<string>Cascadia-Mono-Regular.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-Medium.ttf</string>
+		<string>Nunito-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
