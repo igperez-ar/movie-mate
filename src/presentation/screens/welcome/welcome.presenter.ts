@@ -9,7 +9,7 @@ export const useWelcomePresenter = ({ navigation }: ScreenProps<GlobalRoutesEnum
   const handleButtonPress = () => {
     dispatch(setFlagValue({ hasLaunched: true }));
 
-    navigation.navigate(GlobalRoutesEnum.HOME);
+    navigation.reset({ index: 0, routes: [{ name: GlobalRoutesEnum.HOME }] });
   };
 
   return { handleButtonPress };
