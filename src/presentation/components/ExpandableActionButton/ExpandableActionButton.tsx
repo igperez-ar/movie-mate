@@ -1,4 +1,5 @@
-import { GradientContainer, Icon } from '@components/index';
+import { GradientContainer } from '@components/Containers/GradientContainer';
+import { Icon } from '@components/Icon/Icon';
 import React, { type PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { Animated, Easing, TouchableWithoutFeedback } from 'react-native';
 import { SCREEN_WIDTH } from 'src/shared/constants';
@@ -126,7 +127,7 @@ const ButtonContainer = styled(Animated.View).attrs<ButtonProps>((props) => ({
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.surface};
   border-color: ${({ theme }) => theme.colors.surface};
-  border-width: 2;
+  border-width: 2px;
 `;
 
 const IconContainer = styled.View`

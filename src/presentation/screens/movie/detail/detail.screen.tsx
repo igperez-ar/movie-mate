@@ -82,7 +82,7 @@ const Title = styled.Text`
   color: ${({ theme }) => theme.colors.text.primary};
   font-size: 24px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: ${({ theme }) => theme.spacing.xl}px;
   text-align: center;
   font-family: Cascadia Mono;
 `;
@@ -91,8 +91,8 @@ const SectionTitle = styled.Text`
   color: ${({ theme }) => theme.colors.text.primary};
   font-size: 20px;
   font-weight: 600;
-  margin-top: 24px;
-  margin-bottom: 8px;
+  margin-top: ${({ theme }) => theme.spacing.xl}px;
+  margin-bottom: ${({ theme }) => theme.spacing.md}px;
   font-family: Nunito;
 `;
 
@@ -134,5 +134,5 @@ const InfoContainer = styled.View`
 `;
 
 const AttributeText = styled(Text)`
-  margin-left: ${({ theme }) => theme.spacing.md};
+  margin-left: ${({ theme }) => theme.spacing.md}px;
 `;

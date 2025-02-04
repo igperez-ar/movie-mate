@@ -1,4 +1,5 @@
-import { GlowContainer, GradientContainer } from '@components/index';
+import { GlowContainer } from '@components/Containers/GlowContainer';
+import { GradientContainer } from '@components/Containers/GradientContainer';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { LinearGradientProps } from 'react-native-linear-gradient';
@@ -43,42 +44,42 @@ const TicketContainer = styled.View`
   overflow: hidden;
   flex-direction: row;
   align-items: center;
-  border-radius: 4;
+  border-radius: 4px;
 `;
 
 const DetailsContainer = styled.View`
   overflow: hidden;
   width: 100%;
   height: 100%;
-  border-radius: 4;
+  border-radius: 4px;
   position: absolute;
   flex-direction: row;
   align-items: center;
 `;
 
 const DottedDivider = styled.View`
-  left: -1;
+  left: -1px;
   border-style: dotted;
   border-color: ${({ theme }) => theme.colors.background};
-  border-width: 2;
+  border-width: 2px;
   height: 130%;
   width: 80%;
 `;
 
 const OpacitySquare = styled.View<{ isActive: boolean }>`
-  left: -2;
+  left: -2px;
   width: 100%;
   height: 100%;
   justify-content: center;
   opacity: ${({ isActive }) => (isActive ? 0 : 1)};
-  background-color: ${({theme}) => theme.colors.overlay};
+  background-color: ${({ theme }) => theme.colors.overlay};
 `;
 
 const Circle = styled.View<{ color?: string }>`
   position: absolute;
   height: 50%;
   aspect-ratio: 1;
-  right: -15;
+  right: -15px;
   border-radius: 100%;
   background-color: ${({ theme }) => theme.colors.background};
 `;

@@ -1,4 +1,4 @@
-import { Icon } from '@components/index';
+import { Icon } from '@components/Icon/Icon';
 import type { Movie } from '@core/capabilities/movies';
 import React from 'react';
 import type { ImageProps } from 'react-native';

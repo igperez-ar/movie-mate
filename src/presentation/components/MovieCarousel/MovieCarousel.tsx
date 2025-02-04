@@ -1,4 +1,4 @@
-import { MoviePoster } from '@components/index';
+import { MoviePoster } from '@components/MoviePoster/MoviePoster';
 import type { Movie } from '@core/capabilities/movies';
 import React from 'react';
 import { TouchableOpacity, type FlatListProps, type ListRenderItem } from 'react-native';
@@ -16,7 +16,7 @@ const CarouselItem: React.FC<{ movie: Movie; onPress?: (item: Movie) => void }> 
   onPress,
 }) => (
   <TouchableOpacity onPress={() => onPress?.(movie)}>
-    <MoviePoster path={movie.poster_path} size={100}/>
+    <MoviePoster path={movie.poster_path} size={100} />
   </TouchableOpacity>
 );
 

@@ -53,7 +53,7 @@ const Title = styled.Text`
   color: ${({ theme }) => theme.colors.text.primary};
   font-family: Cascadia Mono;
   font-weight: bold;
-  font-size: 12;
-  letter-spacing: -0.5;
-  padding: ${({theme}) => theme.spacing.md}px;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  padding: ${({ theme }) => theme.spacing.md}px;
 `;

@@ -1,4 +1,4 @@
-import { Header } from '@components/index';
+import { Header } from '@components/Header/Header';
 import styled from 'styled-components/native';
 
 type MainContainerProps = React.PropsWithChildren & {};

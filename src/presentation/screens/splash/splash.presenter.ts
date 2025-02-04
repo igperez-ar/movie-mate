@@ -23,7 +23,7 @@ export const useSplashPresenter = ({ navigation }: ScreenProps<GlobalRoutesEnum.
       index: 0,
       routes: [
         {
-          name: !flags.hasLaunched ? GlobalRoutesEnum.HOME : GlobalRoutesEnum.WELCOME,
+          name: flags.hasLaunched ? GlobalRoutesEnum.HOME : GlobalRoutesEnum.WELCOME,
         },
       ],
     });

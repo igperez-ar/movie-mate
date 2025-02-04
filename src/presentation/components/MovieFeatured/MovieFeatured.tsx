@@ -1,5 +1,7 @@
-import { Icon, MoviePoster, ProgressBar } from '@components/index';
+import { MoviePoster } from '@components/MoviePoster/MoviePoster';
+import { ProgressBar } from '@components/ProgressBar/ProgressBar';
 import type { Movie } from '@core/capabilities/movies';
+import Icon from '@react-native-vector-icons/material-design-icons';
 import { View } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -41,7 +43,7 @@ const FeaturedContainer = styled.View`
 const InnerContainer = styled.View`
   flex: 1;
   flex-direction: row;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.md}px;
 `;
 
 const DetailContainer = styled.View`
@@ -54,7 +56,7 @@ const TitleContainer = styled.View`
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.md}px;
 `;
 
 const Title = styled.Text`
