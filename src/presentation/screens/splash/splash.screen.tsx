@@ -3,6 +3,7 @@ import { LogoTMDB } from 'assets/images';
 import React from 'react';
 import { Animated } from 'react-native';
 import { GlobalRoutesEnum } from 'src/shared/enums/routes';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 import styled from 'styled-components/native';
 import { useSplashPresenter } from './splash.presenter';
 
@@ -41,22 +42,18 @@ const BackgroundContainer = styled(Animated.View).attrs<BackgroundContainerProps
 `;
 
 const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-family: Bukhari Script;
+  ${({ theme }) => createTypographyStyles(theme.typography.logo)}
   font-size: 28px;
-  font-weight: bold;
   text-align: center;
 `;
 
 const FooterContainer = styled.View`
   position: absolute;
-  bottom: 0px;
+  bottom: ${({ theme }) => theme.spacing.lg}px;
 `;
 
 const Credits = styled.Text`
-  color: ${({ theme }) => theme.colors.text.secondary};
-  font-family: Nunito;
-  font-size: 14px;
+  ${({ theme }) => createTypographyStyles(theme.typography.body)}
   margin-bottom: ${({ theme }) => theme.spacing['md-plus']}px;
   text-align: center;
 `;

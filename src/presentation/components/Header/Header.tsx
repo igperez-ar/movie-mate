@@ -2,6 +2,7 @@ import { Icon } from '@components/Icon/Icon';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import { GlobalRoutesEnum, MovieRoutesEnum } from 'src/shared/enums/routes';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 import styled from 'styled-components/native';
 
 export const Header: React.FC = () => {
@@ -50,12 +51,9 @@ const HeaderContainer = styled.View`
 `;
 
 const Title = styled.Text`
-  flex: 1;
+  ${({ theme }) => createTypographyStyles(theme.typography.logo)}
   align-self: center;
   text-align: center;
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-family: Bukhari Script;
-  font-size: 20px;
 `;
 
 type AnimationContainerProps = {

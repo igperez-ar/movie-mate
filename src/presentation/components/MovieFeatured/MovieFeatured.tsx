@@ -1,8 +1,9 @@
+import { Icon } from '@components/Icon/Icon';
 import { MoviePoster } from '@components/MoviePoster/MoviePoster';
 import { ProgressBar } from '@components/ProgressBar/ProgressBar';
 import type { Movie } from '@core/capabilities/movies';
-import Icon from '@react-native-vector-icons/material-design-icons';
 import { View } from 'react-native';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 import styled from 'styled-components/native';
 
 type MovieFeaturedProps = {
@@ -62,16 +63,12 @@ const TitleContainer = styled.View`
 const Title = styled.Text`
   flex: 1;
   margin-right: ${({ theme }) => theme.spacing.lg}px;
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-family: Cascadia Mono;
-  font-weight: bold;
+  ${({ theme }) => createTypographyStyles(theme.typography.h1)}
   font-size: 16px;
 `;
 
 const Description = styled.Text`
-  color: ${({ theme }) => theme.colors.text.secondary};
-  line-height: 20px;
-  font-family: Nunito;
+  ${({ theme }) => createTypographyStyles(theme.typography.body)}
 `;
 
 const ActionButton = styled.TouchableOpacity`
@@ -82,7 +79,5 @@ const ActionButton = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-weight: bold;
-  font-family: Nunito;
+  ${({ theme }) => createTypographyStyles(theme.typography.button)}
 `;

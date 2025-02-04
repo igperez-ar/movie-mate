@@ -40,7 +40,7 @@ export const GlowContainer: React.FC<GlowContainerProps> = ({
   }, [color, animated]);
 
   return (
-    <Container glowColor={color} shadowOpacity={animated ? glowAnimation : 1} {...props}>
+    <Container glowColor={color} style={{ shadowOpacity: animated ? glowAnimation : 1 }} {...props}>
       {children}
     </Container>
   );
@@ -48,12 +48,9 @@ export const GlowContainer: React.FC<GlowContainerProps> = ({
 
 type ContainerProps = {
   glowColor?: string;
-  shadowOpacity: Animated.Value | number;
 };
 
-const Container = styled(Animated.View).attrs<ContainerProps>(({ shadowOpacity }) => ({
-  style: { shadowOpacity },
-}))<ContainerProps>`
+const Container = styled(Animated.View)<ContainerProps>`
   ${({ glowColor, theme }) =>
     glowColor &&
     Platform.select({
@@ -61,9 +58,11 @@ const Container = styled(Animated.View).attrs<ContainerProps>(({ shadowOpacity }
       shadow-color: ${glowColor};
       shadow-offset: 0px 0px;
       shadow-radius: ${theme.spacing.md}px;
-    `,
+      `,
       android: `
-      elevation: 5;
+      shadow-color: ${glowColor};
+      background-color: ${theme.colors.background};
+      elevation: 30;
     `,
     })}
 `;

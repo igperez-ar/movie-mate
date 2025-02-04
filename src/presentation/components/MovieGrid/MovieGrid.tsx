@@ -3,6 +3,7 @@ import React from 'react';
 import { type FlatListProps, type ListRenderItem } from 'react-native';
 import Config from 'react-native-config';
 import { SCREEN_WIDTH } from 'src/shared/constants';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 import styled from 'styled-components/native';
 
 type MovieGridProps = Partial<FlatListProps<MovieWatchlisted>> & {
@@ -50,9 +51,7 @@ const Poster = styled.Image`
 `;
 
 const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-family: Cascadia Mono;
-  font-weight: bold;
+  ${({ theme }) => createTypographyStyles(theme.typography.h1)}
   font-size: 12px;
   letter-spacing: -0.5px;
   padding: ${({ theme }) => theme.spacing.md}px;

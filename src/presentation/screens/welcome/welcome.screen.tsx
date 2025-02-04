@@ -6,6 +6,7 @@ import { GlobalRoutesEnum } from 'src/shared/enums/routes';
 import styled from 'styled-components/native';
 import { useWelcomePresenter } from './welcome.presenter';
 import LinearGradient from 'react-native-linear-gradient';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 
 export const WelcomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.WELCOME>> = (props) => {
   const { handleButtonPress } = useWelcomePresenter(props);
@@ -17,7 +18,7 @@ export const WelcomeScreen: React.FC<ScreenProps<GlobalRoutesEnum.WELCOME>> = (p
           <Title>Welcome{'\n'}to MovieMate</Title>
           <Subtitle>Discover your next history</Subtitle>
           <Description>
-            Explore the world of cinema with personalized recommendations, lists and more.
+            Explore the world of cinema with personalized{'\n'}recommendations, lists and more.
           </Description>
           <ButtonContainer onPress={handleButtonPress}>
             <GradientContainer
@@ -42,34 +43,27 @@ const OpacityContainer = styled(LinearGradient)`
 
 const SafeContainer = styled.SafeAreaView`
   flex: 1;
-  background-color: 'red';
   align-items: center;
   justify-content: flex-end;
-  padding: 0px ${({ theme }) => theme.spacing['lg-plus']}px;
+  padding: ${({ theme }) => theme.spacing['lg-plus']}px;
   margin-bottom: ${({ theme }) => theme.spacing['6xl']}px;
 `;
 
 const Title = styled.Text`
+  ${({ theme }) => createTypographyStyles(theme.typography.logo)}
   font-size: 36px;
-  font-family: Bukhari Script;
-  color: ${({ theme }) => theme.colors.text.primary};
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing['6xl']}px;
 `;
 
 const Subtitle = styled.Text`
-  font-size: 24px;
-  font-weight: bold;
-  font-family: Nunito;
-  color: ${({ theme }) => theme.colors.text.primary};
+  ${({ theme }) => createTypographyStyles(theme.typography.h2)}
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing['md-plus']}px;
 `;
 
 const Description = styled.Text`
-  font-size: 16px;
-  font-family: Nunito;
-  color: ${({ theme }) => theme.colors.text.secondary};
+  ${({ theme }) => createTypographyStyles(theme.typography.caption)}
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing['2xl']}px;
 `;
@@ -83,9 +77,5 @@ const ButtonContainer = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-family: Nunito;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
+  ${({ theme }) => createTypographyStyles(theme.typography.button)}
 `;

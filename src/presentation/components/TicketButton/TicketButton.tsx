@@ -3,6 +3,7 @@ import { GradientContainer } from '@components/Containers/GradientContainer';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { LinearGradientProps } from 'react-native-linear-gradient';
+import { createTypographyStyles } from 'src/shared/utils/typography';
 import styled from 'styled-components/native';
 
 type TicketButtonProps = {
@@ -91,9 +92,6 @@ const TextContainer = styled.View`
 `;
 
 const ButtonText = styled.Text`
-  text-transform: uppercase;
+  ${({ theme }) => createTypographyStyles(theme.typography.button)}
   font-size: 14px;
-  font-family: Nunito;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.text.primary};
 `;
