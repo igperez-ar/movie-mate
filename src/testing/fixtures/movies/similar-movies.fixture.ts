@@ -1,0 +1,41 @@
+export const SIMILAR_MOVIES = {
+  page: 1,
+  results: [
+    {
+      adult: false,
+      backdrop_path: '/images/backdrop_journey.jpg',
+      genre_ids: [28, 12],
+      id: 201,
+      original_language: 'en',
+      original_title: 'Journey to the Unknown',
+      overview:
+        'An epic journey through mysterious lands full of unexpected challenges and wonders.',
+      popularity: 70.1,
+      poster_path: '/images/poster_journey.jpg',
+      release_date: '2021-05-15',
+      title: 'Journey to the Unknown',
+      video: false,
+      vote_average: 7.8,
+      vote_count: 890,
+    },
+    {
+      adult: false,
+      backdrop_path: '/images/backdrop_day_in_life.jpg',
+      genre_ids: [35, 18],
+      id: 202,
+      original_language: 'en',
+      original_title: 'A Day in the Life',
+      overview:
+        'A dramatic portrayal of everyday struggles and triumphs, capturing the essence of life.',
+      popularity: 60.2,
+      poster_path: '/images/poster_day_in_life.jpg',
+      release_date: '2022-03-10',
+      title: 'A Day in the Life',
+      video: false,
+      vote_average: 7.1,
+      vote_count: 450,
+    },
+  ],
+  total_pages: 10,
+  total_results: 200,
+};

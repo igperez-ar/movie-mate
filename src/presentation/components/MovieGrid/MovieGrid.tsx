@@ -15,7 +15,7 @@ const MovieGridItem: React.FC<{
   movie: MovieWatchlisted;
   onPress: () => void;
 }> = ({ movie, onPress }) => (
-  <GridItem key={movie.id} onPress={onPress}>
+  <GridItem key={movie.id} onPress={onPress} testID='movie_grid_item'>
     <Poster source={{ uri: `${Config.API_IMAGE_URL}/w500/${movie.poster_path}` }} />
     <Title>{movie.title}</Title>
   </GridItem>

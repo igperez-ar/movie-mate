@@ -27,7 +27,7 @@ export const TicketButton: React.FC<TicketButtonProps> = ({
         <TicketContainer>
           <GradientContainer colors={colors}>
             <TextContainer>
-              <ButtonText>{title}</ButtonText>
+              <ButtonText aria-selected={isActive}>{title}</ButtonText>
             </TextContainer>
           </GradientContainer>
         </TicketContainer>

@@ -1,5 +1,5 @@
 export enum MovieRoutesEnum {
-  STACK = 'MovieStack',
-  DETAIL = 'Detail',
-  WATCHLIST = 'Watchlist',
+  STACK = 'Movie_Stack',
+  DETAIL = 'Movie_Detail',
+  WATCHLIST = 'Movie_Watchlist',
 }

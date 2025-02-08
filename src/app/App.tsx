@@ -1,12 +1,9 @@
-import React from 'react';
-import { StoreProvider } from 'src/presentation/providers/StoreProvider';
-import { ThemeProvider } from 'styled-components/native';
-import { MainNavigation } from '../core/infrastructure/navigation/MainNavigation';
-import { theme } from './theme/theme';
+import { StoreProvider, ThemeProvider } from 'src/presentation/providers';
+import { MainNavigation } from '@core/infrastructure/navigation/index.router';
 
 export const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <StoreProvider>
         <MainNavigation />
       </StoreProvider>

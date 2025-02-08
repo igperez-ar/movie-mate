@@ -1,5 +1,5 @@
 export enum GlobalRoutesEnum {
-  HOME = 'Home',
-  SPLASH = 'Splash',
-  WELCOME = 'Welcome',
+  HOME = 'Global_Home',
+  SPLASH = 'Global_Splash',
+  WELCOME = 'Global_Welcome',
 }

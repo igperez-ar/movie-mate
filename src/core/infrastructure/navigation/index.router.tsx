@@ -1,6 +1,6 @@
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MovieNavigator } from '@screens/movie/navigation/MovieNavigator';
+import { MovieNavigator } from '@screens/movie/navigation/index.router';
 import React from 'react';
 import { HomeScreen, SplashScreen, WelcomeScreen } from 'src/presentation/screens';
 import { GlobalRoutesEnum, MovieRoutesEnum } from 'src/shared/enums/routes';
