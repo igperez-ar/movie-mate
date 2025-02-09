@@ -1,8 +1,7 @@
 <div align="center">
   <h1>MovieMate</h1>
+  <img src="https://raw.githubusercontent.com/igperez-ar/movie-mate/refs/heads/main/screenshots/moviemate_app.png"/> 
 </div>
-
-<img src="https://github.com/igperez-ar/movie-mate/blob/master/screenshots/moviemate_app.png"  style="border-radius: 20px"/> 
 
 ## Overview
 This application is a cross-platform mobile solution developed for iOS and Android that enables users to browse films by categories. The application is designed with an intuitive user interface and focuses on delivering a seamless browsing experience while ensuring high responsiveness across devices.
