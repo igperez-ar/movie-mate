@@ -76,7 +76,7 @@ export const ExpandableActionButton: React.FC<ExpandableActionButtonProps> = ({
 
   return (
     <MainContainer>
-      <TouchableWithoutFeedback onPress={toggleExpansion}>
+      <TouchableWithoutFeedback onPress={toggleExpansion} testID='expandable_button'>
         <ButtonContainer
           left={animatedValues.left}
           width={animatedValues.width}

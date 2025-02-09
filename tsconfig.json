@@ -15,18 +15,22 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
+      "@components/*": [
+        "src/presentation/components/*"
+      ],
       "@core/*": [
         "src/core/*"
       ],
       "@screens/*": [
         "src/presentation/screens/*"
       ],
-      "@components/*": [
-        "src/presentation/components/*"
-      ],
+      "@testing/*": [
+        "src/testing/*"
+      ]
     },
     "types": [
-      "styled-components-react-native",
+      "jest",
+      "styled-components-react-native"
     ],
     "typeRoots": [
       "node_modules/@types"
@@ -44,7 +48,5 @@
     "babel.config.js",
     "metro.config.js",
     "jest.config.js",
-    "**/*.spec.ts",
-    "**/*.test.ts"
   ],
 }

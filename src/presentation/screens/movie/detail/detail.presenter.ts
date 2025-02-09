@@ -66,12 +66,14 @@ export const useMovieDetailPresenter = (props: MovieDetailScreenProps) => {
 
   const loadDetails = async () => {
     try {
-      executeGetSimilar().then((res) => {
-        setMovieState((prev) => ({
-          ...prev,
-          data: { ...(prev.data ?? ({} as any)), similar: res.results },
-        }));
-      });
+      executeGetSimilar()
+        .then((res) => {
+          setMovieState((prev) => ({
+            ...prev,
+            data: { ...(prev.data ?? ({} as any)), similar: res.results },
+          }));
+        })
+        .catch(() => {});
 
       const response = await executeGetDetails();
 
@@ -82,12 +84,11 @@ export const useMovieDetailPresenter = (props: MovieDetailScreenProps) => {
       }));
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
-      setMovieState((prev) => ({
-        ...prev,
+      setMovieState({
+        data: null,
         isLoading: false,
         error: message,
-      }));
-      throw error;
+      });
     }
   };
 

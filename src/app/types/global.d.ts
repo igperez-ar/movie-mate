@@ -1,5 +1,5 @@
-import type { RootState as StateType } from '@core/infrastructure';
+import type { AppState } from '@core/infrastructure';
 
 declare global {
-  type RootState = StateType;
+  type RootState = AppState;
 }

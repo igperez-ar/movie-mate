@@ -15,7 +15,7 @@ const CarouselItem: React.FC<{ movie: Movie; onPress?: (item: Movie) => void }> 
   movie,
   onPress,
 }) => (
-  <TouchableOpacity onPress={() => onPress?.(movie)}>
+  <TouchableOpacity onPress={() => onPress?.(movie)} testID="movie_carousel_item">
     <MoviePoster path={movie.poster_path} size={100} />
   </TouchableOpacity>
 );
